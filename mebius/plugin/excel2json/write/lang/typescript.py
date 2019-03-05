@@ -253,7 +253,7 @@ class TypeScriptStructureSheetManage(TypeScriptStructureManage):
         for key in self.datas:
             data = self.datas[key]
             initstr += "\tprivate _" + data.toSheetCustomName() + ": " + data.toSheetCustomName() + " | null = null;\n"
-            constructorstr += "\t\tthis._" + data.toSheetCustomName() + " = new " + data.toSheetCustomName() + "(data['" + data.toSheetCustomName() + "']);\n";
+            constructorstr += "\t\tthis._" + data.toSheetCustomName() + " = new " + data.toSheetCustomName() + "(data['" + data.name + "']);\n";
             getstr += "\tpublic get " + data.toSheetCustomName() + "Data(): " + data.toSheetCustomName() + " {\n"
             getstr += "\t\treturn this._" + data.toSheetCustomName() + ";\n\t}\n\n"
         str += initstr;
