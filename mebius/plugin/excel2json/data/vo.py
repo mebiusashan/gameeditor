@@ -165,7 +165,10 @@ class SheetStruct(object):
         self.name = name
         self.exptype = exptype
         self.des = des
-        self.index = index == "index" if True else False
+        if index == "index":
+            self.index = True
+        else:
+            self.index = False
 
     def __str__(self):
         return "{'key': '" + self.key + "', 'dataType: '" + self.datatype + "', 'name: '" + self.name + "', 'exptype: '" + self.exptype + "'}";

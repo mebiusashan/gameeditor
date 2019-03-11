@@ -14,16 +14,18 @@ class JsonLanguage(BaseLanguage):
         for key in myExcel.sheets:
             sd = myExcel.sheets[key]
             if sd.export == False:
-                break
+                continue
             data[sd.name] = [];
             for i in sd.datas:
                 jsonData = {}
+                # print(i)
                 for k in i:
                     expType = sd.getExportByKey(k)
                     if expType == 'noexport':
-                        break
+                        continue
+                    # pass
                     elif expType == 'export':
-                        # print(sd.getDataTypeByKey(k),i[k])
+                        # print(sd.getDataTypeByKey(k), i[k], sd.name)
                         jsonValue = self.conversionJsonValue(sd.getDataTypeByKey(k), i[k])
                         # print(jsonValue)
                         jsonData[k] = jsonValue

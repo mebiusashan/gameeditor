@@ -1,8 +1,12 @@
 # coding=UTF-8
 
-from mebius.plugin.excel2json.read.readexcel import open
-from mebius.plugin.excel2json.write.export import export
+from mebius.core.launcher.app import Launcher
 
-path = '/Users/mebius/Desktop/bbb/'
-rel = open("/Users/mebius/Documents/game/feidao.xlsx")
-export(rel.myExcel, "b", path)
+launcher = Launcher()
+
+# from mebius.plugin.excel2json.read.readexcel import open
+# from mebius.plugin.excel2json.write.export import export
+#
+# path = '/Users/mebius/Desktop/ddddd/'
+# rel = open("/Users/mebius/Desktop/feidao.xlsx")
+# export(rel.myExcel, "peizhi", path)

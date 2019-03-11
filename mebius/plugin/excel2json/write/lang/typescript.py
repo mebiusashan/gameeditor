@@ -51,7 +51,8 @@ class TypescriptLanguage(BaseLanguage):
                 structData = i
                 expType = data.getExportByKey(structData.key)
                 if expType == 'noexport':
-                    break
+                    continue
+                # pass
                 elif expType == 'export':
                     ts.addAttribute(data.name, structData.key, self.conversionDataType(structData.datatype, False))
                 elif expType == 'exportin':
